@@ -1,0 +1,265 @@
+/* Transitions */
+.side-menu-enter-active, .side-menu-leave-active {
+	transition: transform .4s;
+}
+.side-menu-enter, .side-menu-leave-to {
+	transform: translate(100%, 0%);
+}
+
+/* Classes */
+.header{
+	position: relative;
+	z-index: 1000;
+	padding: 15px 0px;
+	background-color: #FFFFFF;
+	height: 55px;
+
+	> .container{
+		display: flex;
+		width: 100%;
+		max-width: 100%;
+
+		@media (max-width: 767px) {
+			max-width: 100%;
+		}
+
+		.logo{
+
+			@media (max-width: 767px) {
+				flex: 1;
+			}
+
+			svg{
+				width: auto;
+				height: 24px;
+				margin-right: 40px;
+
+				path,
+				polygon{
+					fill: #111111;
+					color: #111111;
+				}
+			}
+		}
+
+		.main-menu{
+			flex: 1;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
+
+			ul{
+				list-style: none;
+				margin: 0px;
+				padding: 0px;
+
+				li{
+					position: relative;
+					display: inline-block;
+					padding: 0px;
+					margin: 0px;
+
+					a{
+						position: relative;
+						font-size: 12px;
+						display: inline-block;
+						margin-right: 25px;
+						color: #111111;
+						letter-spacing: 0.05rem;
+						font-weight: 600;
+						text-transform: uppercase;
+
+						&:after{
+							content: '';
+							position: absolute;
+							bottom: -2px;
+							left: 0px;
+							width: 0%;
+							height: 3px;
+							background-color: #111111;
+							transition: width 300ms ease-in-out;
+						}
+
+						&:hover{
+							text-decoration: none;
+
+							&:after{
+								width: calc(100% - 1px);
+							}
+						}
+					}
+
+					.new{
+						position: absolute;
+						top: -5px;
+						left: 0px;
+						font-size: 8px;
+						line-height: 8px;
+						text-transform: uppercase;
+						font-weight: bold;
+						color: #FFF;
+						background-color: $brand-primary;
+						border-radius: 2px;
+						padding: 1px 3px;
+						letter-spacing: 0.05rem;
+					}
+				}
+			}
+		}
+
+		.user-menu{
+
+			> i{
+				cursor: pointer;
+				transform: scale(1.5,1.5);
+				margin-right: 10px;
+
+				@media (max-width: 767px) {
+					display: none;
+				}
+
+				&:hover{
+					opacity: 0.7;
+				}
+			}
+
+			span{
+				font-size: 12px;
+				text-transform: uppercase;
+
+				@media (max-width: 767px) {
+					display: none;
+				}
+
+				&.login{
+
+				}
+
+				&.name{
+					font-weight: bold;
+					color: $brand-primary;
+				}
+			}
+
+			.mobile-menu-trigger{
+				display: none;
+
+				@media (max-width: 767px) {
+					display: block;
+				}
+			}
+		}
+
+		.side-menu{
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			width: 400px;
+			background: $brand-primary;
+			color: #FFF;
+			padding: 30px;
+			z-index: 1000;
+
+			@media (max-width: 450px) {
+				width: 90%;
+			}
+
+			> i{
+				cursor: pointer;
+				font-size: 24px;
+				margin-bottom: 20px;
+				transition: transform .3s ease-in-out;
+
+				&:hover{
+					opacity: 0.7;
+					transform: rotate(90deg);
+				}
+			}
+
+			a{
+				color: #FFF;
+				opacity: 0.7;
+
+				&:hover{
+					opacity: 1;
+				}
+			}
+
+			h2{
+				font-weight: 300;
+				margin-bottom: 30px;
+			}
+
+			label{
+				font-size: 13px;
+				margin: 0px;
+				padding: 0px;
+			}
+
+			input[type=text],
+			input[type=password]{
+				border-radius: 0px;
+				margin-bottom: 15px;
+				background-color: transparent;
+				border: 0px;
+				border-bottom: 1px solid #FFF;
+				color: #FFF;
+				padding: 0px 0px;
+				font-size: 20px;
+				line-height: 20px;
+
+				&:focus{
+					outline: none;
+					box-shadow: none;
+				}
+			}
+
+			.btn{
+
+				&.btn-primary{
+					background-color: #FFF;
+					color: #222;
+					opacity: 1;
+
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+
+				&.btn-secondary{
+					background-color: desaturate(darken($brand-primary, 40%), 35%);
+					color: #FFF;
+					opacity: 1;
+
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+			}
+
+			form{
+				margin-bottom: 20px;
+			}
+
+			ul{
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+
+				li{
+					padding: 0px;
+					margin: 0px 0px 8px 0px;
+
+					a{
+						display: block;
+						color: #FFF;
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,181 @@
+.charts{
+
+	.row{
+
+		@media (max-width: 539px) {
+
+			div:nth-child(1){
+				order: 3;
+			}
+
+			div:nth-child(2){
+				order: 1;
+			}
+
+			div:nth-child(3){
+				order: 2;
+			}
+
+			div:nth-child(4){
+				order: 4;
+			}
+
+		}
+
+	}
+
+	.charts-loader{
+		text-align: center;
+		font-size: 32px;
+	}
+
+}
+
+ul.chart{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+
+	li{
+		margin: 0px 0px 20px 0px;
+		padding: 0px;
+		position: relative;
+
+		a:hover{
+			opacity: 0.9;
+		}
+
+		.preview{
+			width: 100%;
+			height: 160px;
+			background-color: #FFF;
+			position: relative;
+			overflow: hidden;
+
+			.vue-load-image,
+			.preview-image{
+
+				&.has-image:before{
+					content: '';
+					background-color: #111;
+					position: absolute;
+					top: 0px;
+					left: 10px;
+					bottom: 10px;
+					right: 0px;
+					border-radius: 5px;
+				}
+
+				img{
+	 				position: absolute;
+					right: 0px;
+					bottom: 10px;
+
+					animation: browseImageIn 500ms forwards;
+
+					@keyframes browseImageIn {
+						0% { opacity: 0; }
+						100% { opacity: 1; }
+					}
+				}
+
+				div{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -60%);
+					font-size: 60px;
+					color: #DDD;
+				}
+			}
+
+		}
+
+		.number{
+			position: absolute;
+			top: 80px;
+			left: 0px;
+			transform: translate(-20%, -50%);
+			font-size: 22px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			background-color: $brand-primary;
+			color: #FFF;
+		}
+
+		.text{
+			position: relative;
+			background-color: #FFF;
+			padding: 0px 8px 8px 8px;
+
+			.name{
+				display: inline-block;
+				border-bottom: 2px solid $brand-primary;
+				font-size: 24px;
+				line-height: 30px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 70%;
+			}
+
+			.count{
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				transform: translate(0%, -50%);
+				margin-top: -4px;
+				font-size: 18px;
+
+				i{
+					color: $brand-primary;
+					padding-right: 6px;
+				}
+			}
+		}
+
+
+	}
+}
+
+.products{
+	padding-top: 50px;
+
+	.product{
+		min-height: 50px;
+		background-color: #FFF;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 15px;
+
+		.vue-load-image,
+		.product-image{
+
+			img{
+				width: 100%;
+				height: auto;
+
+				animation: browseImageIn 500ms forwards;
+
+				@keyframes browseImageIn {
+					0% { opacity: 0; }
+					100% { opacity: 1; }
+				}
+			}
+
+			div{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 60px;
+				color: #DDD;
+			}
+
+		}
+	}
+
+}
